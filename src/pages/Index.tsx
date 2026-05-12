@@ -290,8 +290,7 @@ export default function Index() {
             <h3 className="cta-title">Готова дать тебе ответ<br />прямо сейчас</h3>
             <p className="cta-text">
               Напиши мне — и уже через несколько часов<br />
-              у тебя будет ясность по твоему вопросу.<br />
-              <strong>Первая консультация — бесплатно.</strong>
+              у тебя будет ясность по твоему вопросу.
             </p>
             <div className="btn-row">
               <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-tg">
