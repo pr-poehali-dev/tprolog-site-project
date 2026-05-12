@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/files/8232cbad-8750-438a-95af-ba4ef1b8e3aa.jpg";
+const MAX_LOGO = "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/fdd32f4d-3c86-430f-989e-e23e1794f7ac.png";
+const TELEGRAM_URL = "https://t.me/guzaerovav";
+const MAX_URL = "https://max.ru/u/f9LHodD0cOIbXELU29wbdfnAqdgzqJtVoKhsgHOhHJGaxCR8sjT9UrIBJec";
 
 const stars = Array.from({ length: 60 }, (_, i) => ({
   id: i,
@@ -246,9 +249,21 @@ export default function Index() {
                 style={{ color: "#0a0812" }}>
                 Выбрать расклад
               </a>
-              <a href="#contacts"
-                className="btn-outline-gold px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase inline-block text-center">
-                Записаться
+              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase justify-center"
+                style={{ background: "rgba(36,161,222,0.15)", border: "1px solid rgba(36,161,222,0.5)", color: "#24A1DE", transition: "all 0.3s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(36,161,222,0.28)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "rgba(36,161,222,0.15)")}>
+                <Icon name="Send" size={18} />
+                Telegram
+              </a>
+              <a href={MAX_URL} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase justify-center"
+                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.25)", color: "#e0d4ff", transition: "all 0.3s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.16)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}>
+                <img src={MAX_LOGO} alt="Макс" style={{ width: 20, height: 20, objectFit: "contain" }} />
+                Макс
               </a>
             </div>
             <div className="flex gap-8 mt-10 justify-center lg:justify-start">
@@ -576,21 +591,21 @@ export default function Index() {
             <RevealSection>
               <div className="card-mystic rounded-3xl p-8 md:p-12">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                  <a href="#"
-                    className="flex items-center gap-3 px-7 py-4 rounded-2xl text-sm font-semibold transition-all"
-                    style={{ background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.4)", color: "#25D366" }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "rgba(37,211,102,0.25)")}
-                    onMouseLeave={e => (e.currentTarget.style.background = "rgba(37,211,102,0.15)")}>
-                    <Icon name="MessageCircle" size={22} />
-                    WhatsApp
-                  </a>
-                  <a href="#"
+                  <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 px-7 py-4 rounded-2xl text-sm font-semibold transition-all"
                     style={{ background: "rgba(36,161,222,0.15)", border: "1px solid rgba(36,161,222,0.4)", color: "#24A1DE" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "rgba(36,161,222,0.25)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "rgba(36,161,222,0.15)")}>
                     <Icon name="Send" size={22} />
                     Telegram
+                  </a>
+                  <a href={MAX_URL} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-7 py-4 rounded-2xl text-sm font-semibold transition-all"
+                    style={{ background: "rgba(100,80,220,0.15)", border: "1px solid rgba(100,80,220,0.45)", color: "#a78bfa" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "rgba(100,80,220,0.28)")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "rgba(100,80,220,0.15)")}>
+                    <img src={MAX_LOGO} alt="Макс" style={{ width: 24, height: 24, objectFit: "contain" }} />
+                    Макс
                   </a>
                 </div>
 
@@ -628,6 +643,30 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* FLOATING BUTTONS */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href={TELEGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Написать в Telegram"
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95"
+          style={{ background: "linear-gradient(135deg, #0088cc, #24A1DE)", boxShadow: "0 4px 20px rgba(36,161,222,0.5)" }}
+        >
+          <Icon name="Send" size={24} color="white" />
+        </a>
+        <a
+          href={MAX_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Написать в Макс"
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95 overflow-hidden"
+          style={{ background: "white", boxShadow: "0 4px 20px rgba(100,80,220,0.5)" }}
+        >
+          <img src={MAX_LOGO} alt="Макс" style={{ width: 38, height: 38, objectFit: "contain" }} />
+        </a>
+      </div>
 
       {/* FOOTER */}
       <footer className="py-10 text-center" style={{ borderTop: "1px solid rgba(212,175,55,0.12)" }}>
