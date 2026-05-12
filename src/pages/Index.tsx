@@ -20,6 +20,26 @@ const reviewScreenshots = [
     img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/277701d6-beab-4210-baf4-c2560b96ab14.jpg",
     caption: "Точность предсказаний",
   },
+  {
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/9d2fe337-a0ea-4100-9293-000a781b0f0c.jpg",
+    caption: "Диагностика — всё верно до деталей",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/c7819d8c-92e6-4822-8e36-43e9bb7371cc.jpg",
+    caption: "Ставы на финансы — всё работает",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/4aad7a4f-1b6e-4b9c-b34a-22283bb7a5ab.jpg",
+    caption: "Расклад Таро — год назад предсказала",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/dabfb954-34fc-44fe-8d22-134fe1eb6b6e.jpg",
+    caption: "Спасибо, вы не зная ничего — сказали всё как есть",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/59f95f0b-11b1-4fd8-b618-8f68db44cc33.jpg",
+    caption: "Матрица судьбы — точно про меня",
+  },
 ];
 
 const utp = [
