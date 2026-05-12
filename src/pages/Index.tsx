@@ -3,42 +3,22 @@ const MAX_LOGO = "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576b
 const TELEGRAM_URL = "https://t.me/guzaerovav";
 const MAX_URL = "https://max.ru/u/f9LHodD0cOIbXELU29wbdfnAqdgzqJtVoKhsgHOhHJGaxCR8sjT9UrIBJec";
 
-const reviews = [
+const reviewScreenshots = [
   {
-    name: "Анастасия М.",
-    text: "Расклад на отношения попал в точку — всё про партнёра сбылось. Теперь понимаю ситуацию и знаю, что делать дальше.",
-    service: "Оракул любви",
-    stars: 5,
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/a3e8ca0c-3641-411e-8614-478eac9df4ef.jpg",
+    caption: "Восковые отливки — снятие негатива",
   },
   {
-    name: "Елена К.",
-    text: "Прошла обучение Таро с нуля — теперь сама делаю расклады. Программа чёткая, всё объясняется доступно и с душой.",
-    service: "Обучение Таро",
-    stars: 5,
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/fd0b0e03-7946-4875-a91d-2cec35c0ae05.jpg",
+    caption: "Результат после сеанса",
   },
   {
-    name: "Марина Д.",
-    text: "Диагностика показала именно то, что меня давно тревожило. После сеанса стало значительно легче. Очень благодарна!",
-    service: "Диагностика негатива",
-    stars: 5,
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/76e21497-d14e-4cdc-9ec7-dd17ee73662a.jpg",
+    caption: "Отзыв после расклада",
   },
   {
-    name: "Ольга Р.",
-    text: "Годовой расклад — это просто космос. Прошло полгода, и всё идёт именно так, как было сказано. Рекомендую всем!",
-    service: "Годовой расклад",
-    stars: 5,
-  },
-  {
-    name: "Наталья В.",
-    text: "Матрица судьбы открыла глаза на моё предназначение. Разбор очень глубокий, узнала о себе то, что не знала никогда.",
-    service: "Матрица судьбы",
-    stars: 5,
-  },
-  {
-    name: "Светлана Т.",
-    text: "Написала в час ночи с тяжёлым вопросом — ответила быстро, поддержала и всё разложила по полочкам. Спасибо огромное!",
-    service: "Консультация",
-    stars: 5,
+    img: "https://cdn.poehali.dev/projects/8e3a5684-5bc4-41c5-b5fb-b576bd37d996/bucket/277701d6-beab-4210-baf4-c2560b96ab14.jpg",
+    caption: "Точность предсказаний",
   },
 ];
 
@@ -206,33 +186,37 @@ export default function Index() {
             Отзывы клиентов
           </div>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(26px, 7vw, 38px)", color: "#F5E6B8", margin: "0 0 4px" }}>
-            Что говорят люди
+            Реальные результаты
           </h2>
-          <div style={{ width: "60px", height: "2px", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)", margin: "10px auto 24px" }} />
+          <p style={{ color: "rgba(212,175,55,0.5)", fontSize: "12px", margin: "6px 0 0" }}>
+            Скриншоты настоящих переписок с клиентами
+          </p>
+          <div style={{ width: "60px", height: "2px", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)", margin: "12px auto 24px" }} />
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          {reviews.map((r, i) => (
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          {reviewScreenshots.map((r, i) => (
             <div key={i} style={{
               background: "linear-gradient(135deg, rgba(123,47,190,0.1), rgba(10,8,18,0.9))",
-              border: "1px solid rgba(212,175,55,0.18)",
-              borderRadius: "16px",
-              padding: "18px 18px 16px",
+              border: "1px solid rgba(212,175,55,0.2)",
+              borderRadius: "20px",
+              overflow: "hidden",
             }}>
-              <div style={{ display: "flex", gap: "2px", marginBottom: "10px" }}>
-                {Array.from({ length: r.stars }).map((_, si) => (
-                  <span key={si} style={{ color: "#D4AF37", fontSize: "15px" }}>★</span>
-                ))}
-              </div>
-              <p style={{ color: "rgba(240,208,96,0.8)", fontSize: "13px", lineHeight: 1.65, margin: "0 0 12px" }}>
-                «{r.text}»
-              </p>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(212,175,55,0.12)", paddingTop: "10px" }}>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: "13px", color: "#F5E6B8" }}>{r.name}</div>
-                  <div style={{ fontSize: "11px", color: "#A855F7" }}>{r.service}</div>
+              <img
+                src={r.img}
+                alt={r.caption}
+                style={{ width: "100%", display: "block", borderRadius: "20px 20px 0 0" }}
+              />
+              <div style={{
+                padding: "12px 16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}>
+                <div style={{ display: "flex", gap: "1px" }}>
+                  {[1,2,3,4,5].map(s => <span key={s} style={{ color: "#D4AF37", fontSize: "13px" }}>★</span>)}
                 </div>
-                <span style={{ color: "#D4AF37", fontSize: "20px" }}>✦</span>
+                <span style={{ fontSize: "12px", color: "#A855F7", fontStyle: "italic" }}>{r.caption}</span>
               </div>
             </div>
           ))}
